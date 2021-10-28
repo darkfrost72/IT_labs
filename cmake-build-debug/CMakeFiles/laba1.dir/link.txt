@@ -1,0 +1,1 @@
+/usr/bin/gcc.exe -g -Wl,--enable-auto-import CMakeFiles/laba1.dir/main.c.o -o laba1.exe -Wl,--out-implib,liblaba1.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
