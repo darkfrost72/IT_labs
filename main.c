@@ -1,7 +1,10 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <math.h>
 #include<locale.h>
 #include <stdbool.h>
+#define VARIANT_1 1
+#define VARIANT_2 2
 
 double funct(float x)
 {
@@ -16,26 +19,31 @@ void head()
     printf("+---------+---------+---------+\n");
 }
 
+void clrscr()
+{
+    system("cls||clear");
+}
 
 int main() {
     setlocale(LC_ALL, "Rus");
     unsigned int choice = 1, n;
     float x1, x2, delta;
     int i;
-    restart:
     printf("Выбери вариант 1 или 2\n");
     scanf("%d", &choice);
-    if (choice > 2) {
+    if (choice > 2 || choice == 0) {
+        clrscr();
         printf("Вас просят выбрать значение либо 1, либо 2. Повторите попытку, пожалуйста\n");
-        goto restart;
+        main();
     }
     if (choice == 0) {
+        clrscr();
         printf("Вас просят выбрать значение либо 1, либо 2. Повторите попытку, пожалуйста\n");
-        goto restart;
+        main();
     }
     else {
         switch (choice) {
-            case 1:
+            case VARIANT_1:
                 printf("Введите данные.\n");
                 printf("X1\n");
                 scanf("%f", &x1);
@@ -63,7 +71,7 @@ int main() {
                 printf("+---------+---------+---------+\n");
                 break;
 
-            case 2:
+            case VARIANT_2:
                 printf("Введите данные.\n");
                 printf("X1\n");
                 scanf("%f", &x1);
